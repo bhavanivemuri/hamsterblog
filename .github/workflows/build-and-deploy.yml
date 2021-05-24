@@ -21,13 +21,13 @@ jobs:
      dotnet-version: ${{ env.NETCORE_VERSION }}
 
   -name: Restore
-   run: dotnet restore
+  run: dotnet restore
 
   -name: Build
-   run: dotnet build --no-restore -c Release
+  run: dotnet build --no-restore -c Release
 
   -name: Publish
-   run: dotnet publish --no-build -c Release -o ${{ AZURE_WEBAPP_PACKAGE_PATH }}
+  run: dotnet publish --no-build -c Release -o ${{ AZURE_WEBAPP_PACKAGE_PATH }}
 
   -name: 'Deploy to Azure WebApp'
   -uses: azure/webapps-deploy@v2

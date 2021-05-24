@@ -14,22 +14,22 @@ jobs:
   steps:
   - uses: actions/checkout@v2
 
-  -name: Setup .Net Core SDK ${{ env.NETCORE_VERSION }}
+  name: Setup .Net Core SDK ${{ env.NETCORE_VERSION }}
   -uses: actions/setup-dotnet@v1
 
   with:
      dotnet-version: ${{ env.NETCORE_VERSION }}
 
-  -name: Restore
+  name: Restore
   run: dotnet restore
 
-  -name: Build
+  name: Build
   run: dotnet build --no-restore -c Release
 
-  -name: Publish
+  name: Publish
   run: dotnet publish --no-build -c Release -o ${{ AZURE_WEBAPP_PACKAGE_PATH }}
 
-  -name: 'Deploy to Azure WebApp'
+  name: 'Deploy to Azure WebApp'
   -uses: azure/webapps-deploy@v2
 
   with:

@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".github\workflows\build-and-deploy.yml" />
     <None Include=".github\workflows\dotnetcore.yml" />
   </ItemGroup>
 
